@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "conteudo": "Abastecer o carro",
+    "autoria": "João"
+  },
+  {
+    "id": 2,
+    "conteudo": "Pagar a conta de luz",
+    "autoria": "Mariana"
+  },
+  {
+    "id": 3,
+    "conteudo": "Comprar frutas no mercado",
+    "autoria": "Carlos"
+  },
+  {
+    "id": 4,
+    "conteudo": "Enviar relatório semanal",
+    "autoria": "Fernanda"
+  },
+  {
+    "id": 5,
+    "conteudo": "Regar as plantas",
+    "autoria": "Ricardo"
+  },
+  {
+    "id": 6,
+    "conteudo": "Estudar 30 minutos de inglês",
+    "autoria": "Ana"
+  },
+  {
+    "id": 7,
+    "conteudo": "Organizar a mesa de trabalho",
+    "autoria": "Paulo"
+  },
+  {
+    "id": 8,
+    "conteudo": "Levar o cachorro para passear",
+    "autoria": "Bianca"
+  },
+  {
+    "id": 9,
+    "conteudo": "Preparar almoço",
+    "autoria": "Sandra"
+  },
+  {
+    "id": 10,
+    "conteudo": "Limpar o carro",
+    "autoria": "Eduardo"
+  }
+]
