@@ -40,7 +40,21 @@ const ui = {
         liThought.appendChild(thoughtContent);
         liThought.appendChild(authorThought);
         listThought.appendChild(liThought);
+    },
+    
+    cancelthougth(){
+        // document.getElementById('pensamento-form').reset();
+        
+        const buttonCancel = document.getElementById('pensamento-form');
+        buttonCancel.reset()
+        
+        // if (!buttonCancel) return;
+
+        // // Tenta resetar o formulário pai do botão; se não encontrar, usa o id conhecido
+        // const form = (buttonCancel.closest && buttonCancel.closest('form')) || document.getElementById('pensamento-form');
+        // if (form && typeof form.reset === 'function') {
+        //     form.reset();
+        // }
     }
 }
-
 export default ui;
