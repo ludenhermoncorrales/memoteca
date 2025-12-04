@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', () =>{
 
     const formThought = document.getElementById('pensamento-form');
     formThought.addEventListener('submit', manipulateSubmitForm)
+
+    const buttonCancel = document.getElementById('botao-cancelar');
+    buttonCancel.addEventListener('click', clearForm);
 } )
 
 async function manipulateSubmitForm(event){
@@ -21,4 +24,9 @@ async function manipulateSubmitForm(event){
         alert('Erro manipulateSubmitForm')
         
     }
+}
+
+function clearForm() {
+    ui.cancelthougth();
+        
 }
