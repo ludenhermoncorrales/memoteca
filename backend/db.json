@@ -64,6 +64,16 @@
       "id": "4d2e",
       "conteudo": "Se eu for aí e achar, eu esfrego na sua cara!",
       "autoria": "Mãe"
+    },
+    {
+      "id": "eff6",
+      "conteudo": "teste 3",
+      "autoria": "teste 3"
+    },
+    {
+      "id": "64c2",
+      "conteudo": "teste 4",
+      "autoria": "teste 4"
     }
   ],
   "pensamentos2": [
@@ -116,15 +126,6 @@
       "id": "10",
       "conteudo": "Limpar o carro",
       "autoria": "Eduardo"
-    },
-    {
-      "id": "2f10"
-    },
-    {
-      "id": "db4e"
-    },
-    {
-      "id": "7011"
     }
   ]
 }
