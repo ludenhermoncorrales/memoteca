@@ -21,7 +21,7 @@ const api = {
             })
             return await respose.json()
         } catch (error) {
-            alert('Erro ao buscar pensamentos');
+            alert('Erro ao SALVAR pensamentos');
             throw error;
         }
     },
@@ -31,7 +31,7 @@ const api = {
             return await respose.json();
 
         } catch (error) {
-            alert('Erro ao saltar edição do pensamento');
+            alert('Erro ao salvar edição do pensamento');
             throw error;
         }
     },

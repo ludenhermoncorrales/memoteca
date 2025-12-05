@@ -18,7 +18,7 @@ async function manipulateSubmitForm(event) {
     const author = document.getElementById('pensamento-autoria').value;
 
     try {
-        if (id == id) {
+        if (id) {
             await api.editThought({id: id, conteudo: content, autoria: author})
             
         } else {
