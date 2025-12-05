@@ -16,120 +16,19 @@
       "autoria": "Dev"
     },
     {
-      "id": "68uy",
-      "conteudo": "Esse é de laranja que parece de limão, mas tem gosto de tamarindo!",
-      "autoria": "Chaves"
-    },
-    {
-      "id": "b807",
-      "conteudo": "Melhor professor, o fracasso é!",
-      "autoria": "Mestre Yoda"
-    },
-    {
-      "id": "9f3c",
-      "conteudo": "Você não é todo mundo!",
-      "autoria": "Mãe"
-    },
-    {
-      "id": "6a2b",
-      "conteudo": "Foi sem querer querendo!",
-      "autoria": "Chaves"
-    },
-    {
-      "id": "7e2a",
-      "conteudo": "Que a força esteja com você!",
-      "autoria": "Mestre Yoda"
-    },
-    {
-      "id": "5c8f",
-      "conteudo": "Resolver o bug não consegue? Esfriar a cabeça vc deve.",
-      "autoria": "Mestre Yoda"
-    },
-    {
-      "id": "2d6e",
-      "conteudo": "Não faça drama, faça café! :)",
+      "id": "348d",
+      "conteudo": "Na minha máquina funciona!!!!!!",
       "autoria": "Dev"
     },
     {
-      "id": "3f1a",
-      "conteudo": "Conserta minha impressora?",
-      "autoria": "Grupo da família"
-    },
-    {
-      "id": "8b4c",
-      "conteudo": "A vingança nunca é plena... mata a alma e a envenena...",
-      "autoria": "Seu Madruga"
-    },
-    {
-      "id": "4d2e",
-      "conteudo": "Se eu for aí e achar, eu esfrego na sua cara!",
-      "autoria": "Mãe"
-    },
-    {
-      "id": "5dee",
+      "id": "6bf3",
       "conteudo": "teste",
       "autoria": "teste"
-    }
-  ],
-  "pensamentos2": [
-    {
-      "id": "1",
-      "conteudo": "Abastecer o carro",
-      "autoria": "João"
     },
     {
-      "id": "2",
-      "conteudo": "Pagar a conta de luz",
-      "autoria": "Mariana"
-    },
-    {
-      "id": "3",
-      "conteudo": "Comprar frutas no mercado",
-      "autoria": "Carlos"
-    },
-    {
-      "id": "4",
-      "conteudo": "Enviar relatório semanal",
-      "autoria": "Fernanda"
-    },
-    {
-      "id": "5",
-      "conteudo": "Regar as plantas",
-      "autoria": "Ricardo"
-    },
-    {
-      "id": "6",
-      "conteudo": "Estudar 30 minutos de inglês",
-      "autoria": "Ana"
-    },
-    {
-      "id": "7",
-      "conteudo": "Organizar a mesa de trabalho",
-      "autoria": "Paulo"
-    },
-    {
-      "id": "8",
-      "conteudo": "Levar o cachorro para passear",
-      "autoria": "Bianca"
-    },
-    {
-      "id": "9",
-      "conteudo": "Preparar almoço",
-      "autoria": "Sandra"
-    },
-    {
-      "id": "10",
-      "conteudo": "Limpar o carro",
-      "autoria": "Eduardo"
-    },
-    {
-      "id": "2f10"
-    },
-    {
-      "id": "db4e"
-    },
-    {
-      "id": "7011"
+      "id": "55fd",
+      "conteudo": "teste3",
+      "autoria": "teste3"
     }
   ]
 }
