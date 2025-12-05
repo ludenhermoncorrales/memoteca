@@ -61,6 +61,27 @@ const ui = {
         iconsDiv.classList.add("icones");
         iconsDiv.appendChild(buttonEdit);
 
+        const buttonDelete = document.createElement('button');
+        buttonDelete.classList.add('botao-excluir');
+        // buttonDelete.onclick = () => api.deletThought()
+        buttonDelete.onclick = async () => {
+            try{
+            api.deletThought(thought.id);
+            ui.renderThought()
+            }
+            catch (error){
+                alert('Erro ao excluir pensamento')
+            }
+        }
+
+        const iconDelete = document.createElement('img');
+        iconDelete.src = "assets/imagens/icone-excluir.png";
+        iconDelete.alt = "Excluir Pensamento";
+
+        buttonDelete.appendChild(iconDelete)
+        iconsDiv.appendChild(buttonDelete)
+        
+
         // === Monta o cartão ===
         liThought.appendChild(iconQuotation);
         liThought.appendChild(thoughtContent);
@@ -73,18 +94,8 @@ const ui = {
 
 
     cancelthougth() {
-        // document.getElementById('pensamento-form').reset();
-
         const buttonCancel = document.getElementById('pensamento-form');
         buttonCancel.reset()
-
-        // if (!buttonCancel) return;
-
-        // // Tenta resetar o formulário pai do botão; se não encontrar, usa o id conhecido
-        // const form = (buttonCancel.closest && buttonCancel.closest('form')) || document.getElementById('pensamento-form');
-        // if (form && typeof form.reset === 'function') {
-        //     form.reset();
-        // }
     }
 }
 export default ui;
