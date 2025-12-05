@@ -1,0 +1,623 @@
+Arquivo index.html{
+    <!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD de Pensamentos</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="conteudo-cabecalho">
+        <div class="logo">
+          <img src="assets/imagens/logo.png" alt="">
+          <h1>Trechos de músicas,<br> citações de livros e
+            <br> <strong>suas melhores ideias
+            <br> num só lugar!</strong>
+          </h1>
+        </div>
+        <div class="imagem-cabecalho">
+          <img 
+            src="assets/imagens/computador-cabecalho.png" 
+            alt="">
+        </div>
+      </div>
+    </header>
+    <main class="background-overlay">
+      <div class="overlay"></div>
+      <div class="overlay overlay-color"></div>
+      <h2>Adicione um pensamento novo:</h2>
+      <section id="form-container">
+        <form id="pensamento-form">
+          <input type="hidden" id="pensamento-id" />
+          <label for="pensamento-conteudo">Pensamento</label>
+          <textarea 
+            id="pensamento-conteudo" 
+            placeholder="Digite seu pensamento" 
+            required></textarea>
+          <label 
+            for="pensamento-autoria">
+              Autoria ou Fonte
+            </label>
+          <input 
+            type="text" 
+            id="pensamento-autoria" 
+            placeholder="Insira a autoria ou fonte" 
+            required />
+          <div class="form-botoes">
+            <button 
+              type="submit" 
+              id="botao-salvar">
+              Adicionar
+            </button>
+            <button 
+              type="button" 
+              id="botao-cancelar">
+              Cancelar
+            </button>
+          </div>
+        </form>
+      </section>
+      <span></span>
+      <section id="lista-pensamentos-container">
+        <h3>Meu Mural</h3>
+        <ul id="lista-pensamentos"></ul>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 
+        2024 Desenvolvido por Alura. 
+        Projeto fictício sem fins comerciais.</p>
+    </footer>
+    <script type="module" src="JS/api.js"></script>
+    <script type="module" src="JS/ui.js"></script>
+    <script type="module" src="JS/main.js"></script>
+  </body>
+</html>
+}
+
+Arquivo CSS {
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Baby-blue: #DBE4EF;
+  --Azul-Dark: #041832;
+  --Cinza-claro: #EDF0F4;
+  --Cinza-medio: #8F8F8F;
+  --Cinza: #444;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  padding-top: 120px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-height: 280vh;
+  box-sizing: border-box; 
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/imagens/background.png'); 
+  background-size: cover;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.overlay-color {
+  background-color: #F4F4F4;
+}
+
+
+header {
+  padding: 112px 240px 112px 360px;
+  background: var(--Azul-Dark, #041832);
+}
+
+.conteudo-cabecalho {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  align-items: center;
+}
+
+header .logo {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+header .logo img {
+  max-width: 200px;
+}
+
+header .logo h1 {
+  color: var(--Baby-blue, #DBE4EF);
+  font-family: "Poppins", sans-serif;
+  align-self: center;
+  font-size: 52px;
+  font-weight: 300;
+  line-height: 67.6px;
+}
+
+.imagem-cabecalho img{
+  max-width: 500px;
+}
+
+footer {
+  padding: 32px 360px;
+  background: #041832;
+  color: var(--Baby-blue, #DBE4EF);
+  text-align: center;
+  width: 100%;
+  position: relative;
+  left: 0;
+}
+
+h2, h3 {
+  color: var(--Azul-Dark, #041832);
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+#form-container {
+  display: flex;
+  padding: 48px 40px;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  align-self: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: #FFF;
+  box-shadow: 8px 8px 20px 0px rgba(4, 24, 50, 0.08);
+  width: 100%;
+  max-width: 712px;
+  margin-top: 40px;
+}
+
+ #pensamento-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#pensamento-conteudo, #pensamento-autoria {
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--Cinza-claro, #EDF0F4);
+  word-wrap: break-word; 
+  overflow-wrap: break-word; 
+}
+
+#pensamento-conteudo {
+  min-height: 80px;
+}
+
+#pensamento-form label {
+  margin-bottom: 16px;
+  color: var(--Azul-Dark, #041832);
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+#pensamento-conteudo::placeholder,  #pensamento-autoria::placeholder{
+  color: var(--Cinza-medio, #8F8F8F);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#pensamento-form textarea,
+#pensamento-form input {
+  margin-bottom: 24px;
+  outline: none;
+  border-style: none;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.form-botoes {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 16px;
+} 
+
+#botao-salvar, #botao-cancelar {
+  padding: 8px 32px;
+  border-radius: 32px;
+  color: var(--Baby-blue, #DBE4EF);
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+#botao-salvar {
+  background: var(--Azul-Dark, #041832);
+  min-width: 160px;
+}
+
+#botao-cancelar {
+  color: var(--Azul-Dark, #041832);
+}
+
+#lista-pensamentos-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px 0;
+}
+
+#lista-pensamentos-container h3 {
+  margin: 40px 0;
+}
+
+#lista-pensamentos {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 32px;
+}
+
+.li-pensamento {
+  position: relative;
+  padding: 16px;
+  background: var(--Branco, #FFF);
+  box-shadow: 8px 8px 0px 0px #154580;
+  flex: 1 1 calc(33.333% - 24px);
+  max-width: calc(33.333% - 24px);
+  min-width: 384px;
+  min-height: 315px; 
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.icone-aspas {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  width: 64px;
+  height: 50px;
+}
+
+.pensamento-conteudo, .pensamento-autoria {
+  margin-left: 20px; 
+  color: var(--Cinza, #444);
+  font-family: "Roboto Mono";
+  font-style: normal;
+  line-height: normal;
+  margin-bottom: 16px; 
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.pensamento-conteudo {
+  margin-top: 96px; 
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.pensamento-autoria {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.icones {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}
+
+.botao-editar, .botao-excluir {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: 8px;
+}
+
+.botao-editar img, .botao-excluir img {
+  width: 20px;
+  height: 20px;
+}
+
+span {
+  width: 180px;
+  height: 1px;
+  background: #041832;
+  margin: 96px 0 48px 0;
+}
+}
+
+Arquivo api.js{
+    const api = {
+    async searchThought() {
+        try {
+            const respose = await fetch('http://localhost:3000/pensamentos');
+            return await respose.json();
+
+        } catch (error) {
+            alert('Erro ao buscar pensamentos');
+            throw error;
+        }
+    },
+
+    async saveThought(thought) {
+        try {
+            // Criar um mapa explicativo e estudar a fundo a estrutura aplicada nesse POST
+            const respose = await fetch('http://localhost:3000/pensamentos', {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(thought)
+
+            })
+            return await respose.json()
+        } catch (error) {
+            alert('Erro ao buscar pensamentos');
+            throw error;
+        }
+    },
+    async takeThoughtForId(id) {
+        try {
+            const respose = await fetch(`http://localhost:3000/pensamentos/${id}`);
+            return await respose.json();
+
+        } catch (error) {
+            alert('Erro ao saltar edição do pensamento');
+            throw error;
+        }
+    },
+    async editThought(thought) {
+        try {
+            // Criar um mapa explicativo e estudar a fundo a estrutura aplicada nesse POST
+            const respose = await fetch(`http://localhost:3000/pensamentos/${thought.id}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(thought)
+
+            })
+            return await respose.json()
+        } catch (error) {
+            alert('Erro ao buscar pensamentos');
+            throw error;
+        }
+    }
+}
+
+export default api;
+}
+
+
+Arquivo main.js{
+    import api from "./api.js";
+import ui from "./ui.js"
+
+document.addEventListener('DOMContentLoaded', () =>{
+    ui.renderThought();
+
+    const formThought = document.getElementById('pensamento-form');
+    formThought.addEventListener('submit', manipulateSubmitForm)
+
+    const buttonCancel = document.getElementById('botao-cancelar');
+    buttonCancel.addEventListener('click', clearForm);
+} )
+
+async function manipulateSubmitForm(event){
+    event.preventDefault();
+    const id = document.getElementById('pensamento-id').value;
+    const content = document.getElementById('pensamento-conteudo').value;
+    const author = document.getElementById('pensamento-autoria').value;
+
+    try {
+        await api.saveThought({conteudo: content, autoria: author});
+        ui.renderThought()
+    } catch (error) {
+        alert('Erro manipulateSubmitForm')
+        
+    }
+}
+
+function clearForm() {
+    ui.cancelthougth();
+        
+}
+}
+
+
+arquivo ui.js{
+    // ui.js. O ui vem de User Interface (Interface do Usuário).
+
+import api from "./api.js";
+
+const ui = {
+
+    async rewriteThought(thoughtId) {
+        const thought = await api.takeThoughtForId(thoughtId);
+        document.getElementById('pensamento-id').value = thought.id;
+        document.getElementById('pensamento-conteudo').value = thought.conteudo;
+        document.getElementById('pensamento-autoria').value = thought.autoria;
+    },
+
+    async renderThought() {
+        const listThought = document.getElementById('lista-pensamentos');
+
+        try {
+            const thought = await api.searchThought();
+            thought.forEach(ui.addThoughtList);
+
+        } catch (error) {
+            alert('Deu ruim');
+
+        }
+    },
+
+
+    addThoughtList(thought) {
+        const listThought = document.getElementById('lista-pensamentos');
+        const liThought = document.createElement('li');
+        liThought.setAttribute('data-id', thought.id)
+        liThought.classList.add('li-pensamento')
+
+        const iconQuotation = document.createElement('img');
+        iconQuotation.src = "assets/imagens/aspas-azuis.png";
+        iconQuotation.alt = "Aspas Azuis";
+        iconQuotation.classList.add('icone-aspas')
+
+        const thoughtContent = document.createElement('div');
+        thoughtContent.textContent = thought.conteudo;
+        thoughtContent.classList.add('pensamento-conteudo');
+
+        const authorThought = document.createElement('div');
+        authorThought.textContent = thought.autoria;
+        authorThought.classList.add('pensamento-autoria');
+        
+        const buttonEdit = document.createElement('button');
+        buttonEdit.classList.add('botao-editar');
+        buttonEdit.onclick = () => ui.rewriteThought(thought.id);
+
+        const iconEdit = document.createElement('img');
+        iconEdit.src = "assets/imagens/icone-editar.png";
+        iconEdit.alt = "Botão editar pensamento";
+        buttonEdit.appendChild(iconEdit)
+
+
+        const icons = document.createElement('div');
+        icons.classList.add("icones");
+        icons.appendChild(buttonEdit)
+
+        liThought.appendChild(iconQuotation);
+        liThought.appendChild(thoughtContent);
+        liThought.appendChild(authorThought);
+        listThought.appendChild(liThought);
+        listThought.appendChild(iconEdit)
+    },
+
+    cancelthougth() {
+        // document.getElementById('pensamento-form').reset();
+
+        const buttonCancel = document.getElementById('pensamento-form');
+        buttonCancel.reset()
+
+        // if (!buttonCancel) return;
+
+        // // Tenta resetar o formulário pai do botão; se não encontrar, usa o id conhecido
+        // const form = (buttonCancel.closest && buttonCancel.closest('form')) || document.getElementById('pensamento-form');
+        // if (form && typeof form.reset === 'function') {
+        //     form.reset();
+        // }
+    }
+}
+export default ui;
+}
+
+Arquivo Json db.json{
+    {
+  "pensamentos": [
+    {
+      "id": "2a56",
+      "conteudo": "Vc faz TI? Conserta meu celular!",
+      "autoria": "Grupo da família"
+    },
+    {
+      "id": "4c7d",
+      "conteudo": "Da vida reclama, mas sem ela não vive!",
+      "autoria": "Mestre Yoda"
+    },
+    {
+      "id": "5b8a",
+      "conteudo": "Na minha máquina funciona!",
+      "autoria": "Dev"
+    },
+    {
+      "id": "68uy",
+      "conteudo": "Esse é de laranja que parece de limão, mas tem gosto de tamarindo!",
+      "autoria": "Chaves"
+    },
+    {
+      "id": "b807",
+      "conteudo": "Melhor professor, o fracasso é!",
+      "autoria": "Mestre Yoda"
+    },
+    {
+      "id": "9f3c",
+      "conteudo": "Você não é todo mundo!",
+      "autoria": "Mãe"
+    },
+    {
+      "id": "6a2b",
+      "conteudo": "Foi sem querer querendo!",
+      "autoria": "Chaves"
+    },
+    {
+      "id": "7e2a",
+      "conteudo": "Que a força esteja com você!",
+      "autoria": "Mestre Yoda"
+    },
+    {
+      "id": "5c8f",
+      "conteudo": "Resolver o bug não consegue? Esfriar a cabeça vc deve.",
+      "autoria": "Mestre Yoda"
+    },
+    {
+      "id": "2d6e",
+      "conteudo": "Não faça drama, faça café! :)",
+      "autoria": "Dev"
+    },
+    {
+      "id": "3f1a",
+      "conteudo": "Conserta minha impressora?",
+      "autoria": "Grupo da família"
+    },
+    {
+      "id": "8b4c",
+      "conteudo": "A vingança nunca é plena... mata a alma e a envenena...",
+      "autoria": "Seu Madruga"
+    },
+    {
+      "id": "4d2e",
+      "conteudo": "Se eu for aí e achar, eu esfrego na sua cara!",
+      "autoria": "Mãe"
+    },
+    {
+      "id": "5dee",
+      "conteudo": "teste",
+      "autoria": "teste"
+    }
+  ]
+}
+}
