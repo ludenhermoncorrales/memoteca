@@ -5,7 +5,7 @@ const api = {
             return await respose.json();
 
         } catch (error) {
-            alert('Erro ao buscar pensamentos');
+            alert('Erro ao buscar pensamentos@@@@');
             throw error;
         }
     },
@@ -36,18 +36,29 @@ const api = {
         }
     },
     async editThought(thought) {
-        debugger;
+
         try {
             // Criar um mapa explicativo e estudar a fundo a estrutura aplicada nesse POST
             const respose = await fetch(`http://localhost:3000/pensamentos/${thought.id}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(thought)
-
+    
             })
             return await respose.json()
         } catch (error) {
             alert('Erro ao buscar pensamentos');
+            throw error;
+        }
+    },
+    async deletThought(id) {
+        try {
+            // Criar um mapa explicativo e estudar a fundo a estrutura aplicada nesse POST
+            const respose = await fetch(`http://localhost:3000/pensamentos/${id}`, {
+                method: "DELETE",
+            })
+        } catch (error) {
+            alert('Erro ao buscar pensamentos!!!!!!');
             throw error;
         }
     }
